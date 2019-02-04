@@ -12,5 +12,8 @@ class User < ApplicationRecord
 #case_sensitiveは小文字と大文字を区別するオプション
 #falseにすることで区別しないとしている
 #uniquenessはオプションを付けると自動的にuniqueness: trueと判断する
-
+  has_secure_password
+#has_secure_passwordメソッドを追記すればセキュアなパスワードの実装完了
+  validates :password, presence: true,
+                       length:{minimum: 6}
 end
