@@ -16,13 +16,13 @@ module Sample
     # -- all .rb files in that directory are automatically loaded after loading
     config.generators do |g|
      g.test_framework :rspec,
-       fixtures: false,
-       view_specs: true,
-       helper_specs: true,
+       fixtures: true,
+       view_specs: false,
+       helper_specs: false,
        controller_specs: true,
        routing_specs: false,
-       request_specs: true
-     # g.fixture_replacement :factory_bot, dir: "spec/factories"
+       request_specs: false
+     g.fixture_replacement :factory_bot, dir: "spec/factories"
      # the framework and any gems in your application.
    end
   end
