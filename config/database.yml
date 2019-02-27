@@ -16,6 +16,7 @@ default: &default
   username: root
   password: sS19880202!
   socket: /var/lib/mysql/mysql.sock
+  localhost: 127.0.0.1
 
 development:
   <<: *default
@@ -51,4 +52,5 @@ production:
   <<: *default
   database: sample_production
   username: sample
+  socket: /var/lib/mysql/mysql.sock
   password: <%= ENV['SAMPLE_DATABASE_PASSWORD'] %>
